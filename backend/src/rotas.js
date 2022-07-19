@@ -12,6 +12,7 @@ const { atualizarTransacao } = require('./controladores/transacao/atualizar-tran
 const { excluirTransacao } = require('./controladores/transacao/excluir-transacao');
 const { extratoTransacoes } = require('./controladores/transacao/extrato-transacoes');
 
+
 const rotas = express();
 
 rotas.post('/usuario', cadastrarUsuario);

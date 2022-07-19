@@ -7,11 +7,10 @@ const pwd = senhaCriptografada();
 const cadastrarUsuario = async (req, res) => {
     const { nome, email, senha } = req.body;
 
-    if (!nome || !email || !senha) {
-        return res.status(400).json({ "mensagem": "Todos os campos são obrigatórios" });
-    }
-
     try {
+        if (!nome || !email || !senha) {
+            return res.status(400).json({ "mensagem": "Todos os campos são obrigatórios" });
+        }
         const query = "SELECT * FROM usuarios WHERE email = $1";
         const { rowCount: quantidadeUsuarios } = await conexao.query(query, [email]);
 
